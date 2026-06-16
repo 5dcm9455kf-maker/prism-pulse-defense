@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prism Pulse Defense</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <h1>Prism Pulse Defense</h1>
+            <p id="modeText">Prism core online.</p>
+          </div>
+        </div>
+
+        <div class="hud-strip" aria-label="Game stats">
+          <div class="hud-pill">
+            <span class="hud-label">Wave</span>
+            <strong id="waveText">0</strong>
+          </div>
+          <div class="hud-pill">
+            <span class="hud-label">Coins</span>
+            <strong id="coinsText">160</strong>
+          </div>
+          <div class="hud-pill">
+            <span class="hud-label">Core</span>
+            <strong id="livesText">20</strong>
+          </div>
+          <div class="hud-pill">
+            <span class="hud-label">Score</span>
+            <strong id="scoreText">0</strong>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button id="pauseBtn" class="icon-button" type="button" aria-label="Pause game" title="Pause">
+            <span aria-hidden="true">II</span>
+          </button>
+          <button id="restartBtn" class="icon-button" type="button" aria-label="Restart game" title="Restart">
+            <span aria-hidden="true">R</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="arena-wrap" aria-label="Game arena">
+          <canvas id="gameCanvas" width="1280" height="720"></canvas>
+          <div id="waveBanner" class="wave-banner">Ready</div>
+        </section>
+
+        <aside class="side-panel" aria-label="Game controls">
+          <section class="panel-section">
+            <div class="section-heading">
+              <h2>Hero</h2>
+              <span id="abilityText">Pulse ready</span>
+            </div>
+            <div id="heroDeck" class="hero-deck"></div>
+          </section>
+
+          <section class="panel-section">
+            <div class="section-heading">
+              <h2>Towers</h2>
+              <span id="selectedTowerText">None</span>
+            </div>
+            <div id="towerDeck" class="tower-deck"></div>
+          </section>
+
+          <section class="panel-section inspector">
+            <div class="section-heading">
+              <h2>Focus</h2>
+              <span id="focusLevelText">Level 1</span>
+            </div>
+            <div id="focusName" class="focus-name">Select a tower pad</div>
+            <div id="focusStats" class="focus-stats">No tower focused.</div>
+            <button id="upgradeBtn" class="wide-button" type="button" disabled>Upgrade</button>
+          </section>
+
+          <section class="panel-section wave-actions">
+            <button id="startWaveBtn" class="start-button" type="button">Start Wave</button>
+            <button id="abilityBtn" class="wide-button ability-button" type="button">Hero Power</button>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
